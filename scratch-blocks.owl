@@ -272,6 +272,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_0fe50e84_2e56_4ca1_875c_dd74199f38bf -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_0fe50e84_2e56_4ca1_875c_dd74199f38bf">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_8a712b60_a5e9_4dd3_bcce_ff0bb71a3dc7"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_f8518d2f_7dbc_4a3d_a8d4_c0885d00c305"/>
+        <rdfs:label xml:lang="pt">ListsBlock</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_117b5124_283f_46d0_a74f_3d7a550a80be -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_117b5124_283f_46d0_a74f_3d7a550a80be">
@@ -312,8 +322,19 @@
     <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_2363ce03_3a40_4fd4_9e70_b02333a364f8 -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_2363ce03_3a40_4fd4_9e70_b02333a364f8">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_2ced2986_0618_4a58_b738_08e67383a773"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_db260fef_cd36_4312_96a2_7bd7a7211ff1"/>
         <rdfs:label xml:lang="pt">LengthOf()Block</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_24329233_450f_48f5_95ec_b43d19c9fb65 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_24329233_450f_48f5_95ec_b43d19c9fb65">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_0fe50e84_2e56_4ca1_875c_dd74199f38bf"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_d0c77e18_a5b1_485f_b6a8_8e3d46137f9f"/>
+        <rdfs:label xml:lang="pt">ListsStackBlock</rdfs:label>
     </owl:Class>
     
 
@@ -351,6 +372,16 @@
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_2c6425db_d689_4a36_84eb_b69043679fe3">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_51b5f276_2c98_4892_b672_183e321777e9"/>
         <rdfs:label xml:lang="pt">WhenBackdropSwitchesTo()Block</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_2ced2986_0618_4a58_b738_08e67383a773 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_2ced2986_0618_4a58_b738_08e67383a773">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_0fe50e84_2e56_4ca1_875c_dd74199f38bf"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_693ea2b0_766b_4a80_9541_b717a5f9b46c"/>
+        <rdfs:label xml:lang="pt">ListsReporterBlock</rdfs:label>
     </owl:Class>
     
 
@@ -493,6 +524,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_3d6e2b89_676a_4eff_8571_7d6e3ecae627 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_3d6e2b89_676a_4eff_8571_7d6e3ecae627">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_0ce4226c_eb11_4861_8f32_74721f1a92ac"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_0fe50e84_2e56_4ca1_875c_dd74199f38bf"/>
+        <rdfs:label xml:lang="pt">ListsBooleanBlock</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_3d7f4193_2546_4cb0_9533_103d8badd786 -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_3d7f4193_2546_4cb0_9533_103d8badd786">
@@ -614,6 +655,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_52a1dcd7_fd75_427e_b232_2fd58d6270d1 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_52a1dcd7_fd75_427e_b232_2fd58d6270d1">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_3d6e2b89_676a_4eff_8571_7d6e3ecae627"/>
+        <rdfs:label xml:lang="pt">()Contains()?Block</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_559839a2_af92_44f9_a577_fda6b52bdbfd -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_559839a2_af92_44f9_a577_fda6b52bdbfd">
@@ -722,6 +772,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_67ed8516_3882_4070_8890_ea5055df0209 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_67ed8516_3882_4070_8890_ea5055df0209">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_24329233_450f_48f5_95ec_b43d19c9fb65"/>
+        <rdfs:label xml:lang="pt">HideList()Block</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_693ea2b0_766b_4a80_9541_b717a5f9b46c -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_693ea2b0_766b_4a80_9541_b717a5f9b46c">
@@ -755,6 +814,15 @@
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_6fa3009f_622e_494b_8b3d_49c277076d59">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_3111d687_0af0_492d_aeac_eb4395676333"/>
         <rdfs:label xml:lang="pt">ChangeSizeBy()Block</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_6fa3ab3c_4eef_4999_a3bf_6955bfe3b4dd -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_6fa3ab3c_4eef_4999_a3bf_6955bfe3b4dd">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_24329233_450f_48f5_95ec_b43d19c9fb65"/>
+        <rdfs:label xml:lang="pt">Insert()At()Of()Block</rdfs:label>
     </owl:Class>
     
 
@@ -804,11 +872,29 @@
     
 
 
+    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_724e4203_6d52_44c2_826c_2098f420bbb0 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_724e4203_6d52_44c2_826c_2098f420bbb0">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_bd7777bf_8716_4a9a_aee8_b8425a8c9f8a"/>
+        <rdfs:label xml:lang="pt">VariableValueBlock</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_72ba4c8d_9602_4fb5_b77e_ed9c43d119ce -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_72ba4c8d_9602_4fb5_b77e_ed9c43d119ce">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_c5d77835_f522_4897_a499_4e0e1030a137"/>
         <rdfs:label xml:lang="pt">GoToX()Y()Block</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_7a08607b_8d32_4dfc_b61c_c1281a3d578c -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_7a08607b_8d32_4dfc_b61c_c1281a3d578c">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_2ced2986_0618_4a58_b738_08e67383a773"/>
+        <rdfs:label xml:lang="pt">Item()Of()Block</rdfs:label>
     </owl:Class>
     
 
@@ -876,6 +962,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_8a712b60_a5e9_4dd3_bcce_ff0bb71a3dc7 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_8a712b60_a5e9_4dd3_bcce_ff0bb71a3dc7">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_384c21eb_347b_4397_b76c_8d5d8aec7fe7"/>
+        <rdfs:label xml:lang="pt">DataBlock</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_8c2d7fe0_e74a_468b_b418_ba6a5cfb840d -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_8c2d7fe0_e74a_468b_b418_ba6a5cfb840d">
@@ -890,6 +985,15 @@
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_8ce8c0af_dda3_484d_8f2b_4e5a4f6419bd">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_3111d687_0af0_492d_aeac_eb4395676333"/>
         <rdfs:label xml:lang="pt">Think()For()SecsBlock</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_8e0476e1_5408_42a1_8090_154d3d9f4658 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_8e0476e1_5408_42a1_8090_154d3d9f4658">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_24329233_450f_48f5_95ec_b43d19c9fb65"/>
+        <rdfs:label xml:lang="pt">ShowList()Block</rdfs:label>
     </owl:Class>
     
 
@@ -967,6 +1071,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_ad4cfcde_40da_4c2d_980b_a2a451b8c09d -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_ad4cfcde_40da_4c2d_980b_a2a451b8c09d">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_2ced2986_0618_4a58_b738_08e67383a773"/>
+        <rdfs:label xml:lang="pt">Item#Of()In()Block</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_af61224c_e5cb_4c96_ba63_002a4d4bcea6 -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_af61224c_e5cb_4c96_ba63_002a4d4bcea6">
@@ -981,6 +1094,15 @@
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_aff738af_c845_4a90_a0e2_56d5f1465b7b">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_3111d687_0af0_492d_aeac_eb4395676333"/>
         <rdfs:label xml:lang="pt">SwitchCostumeTo()Block</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_b01a07e6_f8ae_4b21_a6de_3189d3a76202 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_b01a07e6_f8ae_4b21_a6de_3189d3a76202">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_24329233_450f_48f5_95ec_b43d19c9fb65"/>
+        <rdfs:label xml:lang="pt">DeleteAllOf()Block</rdfs:label>
     </owl:Class>
     
 
@@ -1095,6 +1217,15 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_c917240f_c8a4_439d_8a41_e19d20db4ed0"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_ef8369fb_ed0d_4c1b_95c8_3fa114b8325a"/>
         <rdfs:label xml:lang="pt">Broadcast()Block</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_c49d5ef7_ee46_44b4_aa0c_573f73742e7e -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_c49d5ef7_ee46_44b4_aa0c_573f73742e7e">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_2ced2986_0618_4a58_b738_08e67383a773"/>
+        <rdfs:label xml:lang="pt">ListBlock</rdfs:label>
     </owl:Class>
     
 
@@ -1368,6 +1499,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_ee76ec81_669d_4643_b24b_9435aa971a1f -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_ee76ec81_669d_4643_b24b_9435aa971a1f">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_24329233_450f_48f5_95ec_b43d19c9fb65"/>
+        <rdfs:label xml:lang="pt">Delete()Of()Block</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_ef8369fb_ed0d_4c1b_95c8_3fa114b8325a -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_ef8369fb_ed0d_4c1b_95c8_3fa114b8325a">
@@ -1447,9 +1587,17 @@
     <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_f8518d2f_7dbc_4a3d_a8d4_c0885d00c305 -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_f8518d2f_7dbc_4a3d_a8d4_c0885d00c305">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_384c21eb_347b_4397_b76c_8d5d8aec7fe7"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_bd7777bf_8716_4a9a_aee8_b8425a8c9f8a"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_8a712b60_a5e9_4dd3_bcce_ff0bb71a3dc7"/>
         <rdfs:label xml:lang="pt">VariableBlock</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_fd0e2dd1_0758_498e_9ec0_34cbaf4b6f4b -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_fd0e2dd1_0758_498e_9ec0_34cbaf4b6f4b">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_24329233_450f_48f5_95ec_b43d19c9fb65"/>
+        <rdfs:label xml:lang="pt">Add()To()Block</rdfs:label>
     </owl:Class>
     
 
@@ -1459,6 +1607,15 @@
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_fdf90b7a_3fd6_4d4b_9167_c94bc8555589">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_3111d687_0af0_492d_aeac_eb4395676333"/>
         <rdfs:label xml:lang="pt">SwitchBackdropTo()Block</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_ff2bc870_92cb_4001_b5a0_9ae85c6116c9 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_ff2bc870_92cb_4001_b5a0_9ae85c6116c9">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_24329233_450f_48f5_95ec_b43d19c9fb65"/>
+        <rdfs:label xml:lang="pt">ReplaceItem()Of()With()Block</rdfs:label>
     </owl:Class>
     
 
@@ -1588,6 +1745,23 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_2363ce03_3a40_4fd4_9e70_b02333a364f8"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_7a08607b_8d32_4dfc_b61c_c1281a3d578c"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_ad4cfcde_40da_4c2d_980b_a2a451b8c09d"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_c49d5ef7_ee46_44b4_aa0c_573f73742e7e"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_24329233_450f_48f5_95ec_b43d19c9fb65"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_2ced2986_0618_4a58_b738_08e67383a773"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_3d6e2b89_676a_4eff_8571_7d6e3ecae627"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_2bb74bcb_fd42_487e_a9d9_7efc8fc7908e"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_51086e3c_ca78_4e01_a414_dd256d866c01"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_6fa3009f_622e_494b_8b3d_49c277076d59"/>
@@ -1655,6 +1829,21 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_5e7d8143_f52b_42f2_ad7d_bba6dbe8964f"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_5f46b7c0_c473_4342_989c_51263ed23778"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_6668b4b4_6bc3_4252_ad26_a6a25e8bdc34"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_8a712b60_a5e9_4dd3_bcce_ff0bb71a3dc7"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_af61224c_e5cb_4c96_ba63_002a4d4bcea6"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_b2ea224a_8476_4b79_8a57_5d346fca8d6a"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_f2e9d85a_d389_4073_9900_e3ce57b026b6"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_f34a72c7_57d0_4a90_9e24_a7eb29216a27"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_f8518d2f_7dbc_4a3d_a8d4_c0885d00c305"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_446782eb_4c2f_4932_9224_766274dc92f9"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_5e7d8143_f52b_42f2_ad7d_bba6dbe8964f"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_5f46b7c0_c473_4342_989c_51263ed23778"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_6668b4b4_6bc3_4252_ad26_a6a25e8bdc34"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_af61224c_e5cb_4c96_ba63_002a4d4bcea6"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_b2ea224a_8476_4b79_8a57_5d346fca8d6a"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_f2e9d85a_d389_4073_9900_e3ce57b026b6"/>
@@ -1679,6 +1868,18 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_6fd8c36d_3ddd_4ebd_8c2a_20aa40aac314"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_7abdacfc_c08e_49ab_9c5f_de18a8789b4c"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_d4aff1eb_a094_4dc0_9d19_5621241c2ef2"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_67ed8516_3882_4070_8890_ea5055df0209"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_6fa3ab3c_4eef_4999_a3bf_6955bfe3b4dd"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_8e0476e1_5408_42a1_8090_154d3d9f4658"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_b01a07e6_f8ae_4b21_a6de_3189d3a76202"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_ee76ec81_669d_4643_b24b_9435aa971a1f"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_fd0e2dd1_0758_498e_9ec0_34cbaf4b6f4b"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/scratch-blocks#OWLClass_ff2bc870_92cb_4001_b5a0_9ae85c6116c9"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
