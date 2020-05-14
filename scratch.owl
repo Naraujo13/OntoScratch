@@ -48,6 +48,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ActorRelation">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/BlockRelation"/>
     </owl:ObjectProperty>
     
 
@@ -64,6 +65,26 @@
         <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/HatShape"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/StackShape"/>
         <rdfs:label xml:lang="en">After</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/BackdropIsFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/BackdropIsFrom">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/BackdropRelation"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/HasBackdrop"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Backdrop"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Stage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/BackdropRelation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/BackdropRelation">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/FrameRelation"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/CostumeRelation"/>
     </owl:ObjectProperty>
     
 
@@ -126,10 +147,59 @@
     
 
 
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/CostumeIsUsedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/CostumeIsUsedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/CostumeRelation"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/HasCostume"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Costume"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Sprite"/>
+        <rdfs:label xml:lang="en">CostumeIsUsedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/CostumeRelation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/CostumeRelation">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/FrameRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/FrameRelation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/FrameRelation">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ActorRelation"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ScriptingRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/HasBackdrop -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/HasBackdrop">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/BackdropRelation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Stage"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Backdrop"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/HasCostume -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/HasCostume">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/CostumeRelation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Sprite"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Costume"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/HasScript -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/HasScript">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ActorRelation"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ScriptingRelation"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Scripts"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Actor"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/HatShape"/>
@@ -156,10 +226,18 @@
     
 
 
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/ScriptingRelation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ScriptingRelation">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ActorRelation"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/Scripts -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Scripts">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ActorRelation"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ScriptingRelation"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/HatShape"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Actor"/>
         <rdfs:label xml:lang="en">Scripts</rdfs:label>
@@ -233,6 +311,15 @@
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/AnswerBlock">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/SensingReporterBlock"/>
         <rdfs:label xml:lang="en">AnswerBlock</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/Backdrop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Backdrop">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Frames"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Costume"/>
     </owl:Class>
     
 
@@ -353,6 +440,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/Costume -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Costume">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Frames"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/DataType -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/DataType">
@@ -425,6 +520,14 @@
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ForeverBlock">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ControlCBlock"/>
         <rdfs:label xml:lang="en">ForeverBlock</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/Frames -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Frames">
+        <rdfs:label xml:lang="en">Frame</rdfs:label>
     </owl:Class>
     
 
