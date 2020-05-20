@@ -301,7 +301,10 @@
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/Actor -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Actor">
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ScratchBlock"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Sprite"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Stage"/>
+        </owl:disjointUnionOf>
     </owl:Class>
     
 
@@ -328,6 +331,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/BlockShape">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ScratchBlock"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/BoolShape"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/CShape"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/CapShape"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/HatShape"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ReporterShape"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/StackShape"/>
+        </owl:disjointUnionOf>
         <dc:description xml:lang="en">Structure to represent block shape</dc:description>
         <rdfs:label xml:lang="en">BlockShape</rdfs:label>
     </owl:Class>
@@ -338,6 +349,17 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/BlockType">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ScratchBlock"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ControlType"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/DataType"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/EventsType"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/LooksType"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/MotionType"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/MyBlocksType"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/OperatorsBlock"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SensingType"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SoundBlock"/>
+        </owl:disjointUnionOf>
         <rdfs:label xml:lang="en">BlockType</rdfs:label>
     </owl:Class>
     
@@ -347,6 +369,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/BoolShape">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/BlockShape"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/HexInput"/>
         <dc:description xml:lang="en">Boolean blocks are the conditions — they are either true or false. For example, asking a computer: &quot;Does 2 + 2 = 4?&quot;, and it would either tell you &quot;Yes&quot; or &quot;No&quot;. With a hexagonal shape, there are 13 of these blocks.</dc:description>
         <rdfs:label xml:lang="en">BoolShape</rdfs:label>
     </owl:Class>
@@ -527,6 +550,10 @@
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/Frames -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Frames">
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Backdrop"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Costume"/>
+        </owl:disjointUnionOf>
         <rdfs:label xml:lang="en">Frame</rdfs:label>
     </owl:Class>
     
@@ -538,6 +565,14 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/BlockShape"/>
         <dc:description xml:lang="en">Hat blocks are the blocks that start every script. They are shaped with a rounded top and a bump at the bottom — this is so you can only place blocks below them. There are 11 Hat blocks in the Scratch editor, six of which are in the Events category, one in the Control category, and one in the category My Blocks (if one has created one custom block).</dc:description>
         <rdfs:label xml:lang="en">HatShape</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/HexInput -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/HexInput">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Input"/>
     </owl:Class>
     
 
@@ -556,6 +591,18 @@
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/IfOnEdgeBounceBlock">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/MotionStackBlock"/>
         <rdfs:label xml:lang="en">IfOnEdgeBounceBlock</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/Input -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Input">
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/HexInput"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/RoundInput"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SquareInput"/>
+        </owl:disjointUnionOf>
     </owl:Class>
     
 
@@ -785,6 +832,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ReporterShape">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/BlockShape"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/RoundInput"/>
         <dc:description xml:lang="en">Reporter blocks are the values. Reporter blocks can hold numbers and strings. It is like asking a friend, for example, &quot;What is 2 + 2?&quot;, and they would answer &quot;4&quot;. It can also report a variable. For example, &quot;What is your age?&quot; and they may answer: &quot;15&quot;. Shaped with rounded edges, there are 37 of these blocks — not counting the theoretically infinite amount of Reporter blocks that can be made for each variable and list.</dc:description>
         <rdfs:label xml:lang="en">ReporterShape</rdfs:label>
     </owl:Class>
@@ -796,6 +844,23 @@
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ResetTimerBlock">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/SensingStackBlock"/>
         <rdfs:label xml:lang="en">ResetTimerBlock</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/RoundDropdownInput -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/RoundDropdownInput">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/RoundInput"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Value"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/RoundInput -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/RoundInput">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Input"/>
     </owl:Class>
     
 
@@ -902,6 +967,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/SquareDropdownInput -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SquareDropdownInput">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/SquareInput"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/SquareInput -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SquareInput">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Input"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/StackShape -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/StackShape">
@@ -943,6 +1024,14 @@
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/UsernameBlock">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/SensingReporterBlock"/>
         <rdfs:label xml:lang="en">UsernameBlock</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/Value -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Value">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/RoundInput"/>
     </owl:Class>
     
 
@@ -1854,6 +1943,22 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Actor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Frames"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Input"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Actor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Frames"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ScratchBlock"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/AnswerBlock"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/DaysSince2000Block"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/LoudnessBlock"/>
@@ -1961,6 +2066,14 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/If()ThenElseBlock"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Repeat()Block"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/RepeatUntil()Block"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/HexInput"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/RoundInput"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SquareInput"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
