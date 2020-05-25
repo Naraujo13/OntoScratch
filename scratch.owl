@@ -58,12 +58,24 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/After">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/SequenceRelation"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Before"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/CShape"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/CapShape"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/StackShape"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/CShape"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/HatShape"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/StackShape"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/CShape"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/CapShape"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/StackShape"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/CShape"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/HatShape"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/StackShape"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:label xml:lang="en">After</rdfs:label>
     </owl:ObjectProperty>
     
@@ -93,12 +105,24 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Before">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/SequenceRelation"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/CShape"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/HatShape"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/StackShape"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/CShape"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/CapShape"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/StackShape"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/CShape"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/HatShape"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/StackShape"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/CShape"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/CapShape"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/StackShape"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:label xml:lang="en">Before</rdfs:label>
     </owl:ObjectProperty>
     
@@ -113,35 +137,17 @@
     
 
 
-    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/BooleanChild -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/BooleanChild">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ChildOf"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/BooleanParent"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/BoolShape"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/CShape"/>
-        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/VariableChild"/>
-        <rdfs:label xml:lang="en">BooleanChild</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/BooleanParent -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/BooleanParent">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ParentOf"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/CShape"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/BoolShape"/>
-        <rdfs:label xml:lang="en">BooleanParent</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/ChildOf -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ChildOf">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/NestingRelation"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ParentOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/BoolShape"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/CShape"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/HatShape"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ReporterShape"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/StackShape"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/CapShape"/>
         <rdfs:label xml:lang="en">ChildOf</rdfs:label>
     </owl:ObjectProperty>
     
@@ -208,6 +214,23 @@
     
 
 
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/InputOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/InputOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/InputRelation"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/hasInput"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/InputRelation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/InputRelation">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/BlockRelation"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/NestingRelation -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/NestingRelation">
@@ -221,6 +244,12 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ParentOf">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/NestingRelation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/CShape"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/BoolShape"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/CShape"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/HatShape"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ReporterShape"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/StackShape"/>
         <rdfs:label xml:lang="en">ParentOf</rdfs:label>
     </owl:ObjectProperty>
     
@@ -254,35 +283,306 @@
     
 
 
-    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/VariableChild -->
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/hasHexInput -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/VariableChild">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ChildOf"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/VariableParent"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ReporterShape"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/hasHexInput">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/hasInput"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/isHexInput"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()And()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()Or()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/If()ThenBlock"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/If()ThenElseBlock"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Not()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/RepeatUntil()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/WaitUntil()Block"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/BoolShape"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/CShape"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/CapShape"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/HatShape"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ReporterShape"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/StackShape"/>
-        <rdfs:label xml:lang="en">VariableChild</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/VariableParent -->
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/hasInput -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/VariableParent">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ParentOf"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/hasInput">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/InputRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/hasRoundDropdownInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/hasRoundDropdownInput">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/hasRoundInput"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/isRoundDropdownInput"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ReporterShape"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/RoundDropdownInput"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/hasRoundInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/hasRoundInput">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/hasInput"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/isRoundInput"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/hasRoundValueInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/hasRoundValueInput">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/hasRoundInput"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/isRoundValueInput"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()*()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()+()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()-()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()=()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()Contains()?Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()DividedBy()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()GreaterThan()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()LessThan()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()ListContains()?Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()Mod()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Add()To()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Ask()AndWaitBlock"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Change()By()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Change()EffectBy()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ChangeSizeBy()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ChangeVolumeBy()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ChangeXBy()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ChangeYBy()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Color()IsTouching()?Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Delete()Of()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Glide()SecsTo()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Glide()SecsToX()Y()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Go()()LayersBlock"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/GoToX()Y()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Insert()At()Of()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Item()Of()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ItemWithPoistionOf()In()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Join()()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Letter()Of()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Move()StepsBlock"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/PickRandom()To()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/PointInDirection()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Repeat()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ReplaceItem()Of()With()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Round()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Say()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Say()For()SecsBlock"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Set()EffectTo()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Set()To()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SetSizeTo()PercentageBlock"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SetVolumeTo()PercentageBlock"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SetXTo()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SetYTo()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Think()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/TouchingColor()?Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Turn()DegreesBlock"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Wait()SecsBlock"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/When()GreaterThan()Block"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ReporterShape"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/RoundDropdownInput"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/hasSquareDropdownInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/hasSquareDropdownInput">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/hasSquareInput"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/isSquareDropdownInput"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()ListContains()?Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()Of()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Add()To()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Broadcast()AndWaitBlock"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Broadcast()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Change()By()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Change()EffectBy()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/CreateCloneOf()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Current()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Delete()Of()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/DeleteAllOf()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/DistanceTo()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Glide()SecsTo()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Go()()LayersBlock"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/GoTo()LayerBlock"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/GoToX()Y()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/HideList()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/HideVariable()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Insert()At()Of()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Item()Of()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ItemWithPoistionOf()In()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Key()Pressed?Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/LengthOfList()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/PlaySound()UntilDoneBlock"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/PointTowards()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ReplaceItem()Of()With()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Set()EffectTo()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Set()To()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SetDragMode()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SetRotationStyle()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ShowList()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ShowVariable()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/StartSound()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Stop()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SwitchBackdropTo()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SwitchCostumeTo()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Touching?Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/When()KeyPressedBlock"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/When()GreaterThan()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/WhenBackdropSwitchesTo()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/WhenIReceive()Block"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/SquareDropdownInput"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/hasSquareInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/hasSquareInput">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/hasInput"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/isSquareInput"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/isHexInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/isHexInput">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/InputOf"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/BoolShape"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/CShape"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/CapShape"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/HatShape"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ReporterShape"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/StackShape"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ReporterShape"/>
-        <rdfs:label xml:lang="en">VariableParent</rdfs:label>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()And()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()Or()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/If()ThenBlock"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/If()ThenElseBlock"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Not()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/RepeatUntil()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/WaitUntil()Block"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/isRoundDropdownInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/isRoundDropdownInput">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/isRoundInput"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/isRoundInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/isRoundInput">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/InputOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/isRoundValueInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/isRoundValueInput">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/isRoundInput"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/isSquareDropdownInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/isSquareDropdownInput">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/isSquareInput"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/SquareDropdownInput"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()ListContains()?Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()Of()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Add()To()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Broadcast()AndWaitBlock"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Broadcast()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Change()By()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Change()EffectBy()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/CreateCloneOf()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Current()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Delete()Of()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/DeleteAllOf()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/DistanceTo()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Glide()SecsTo()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Go()()LayersBlock"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/GoTo()LayerBlock"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/GoToX()Y()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/HideList()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/HideVariable()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Insert()At()Of()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Item()Of()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ItemWithPoistionOf()In()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Key()Pressed?Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/LengthOfList()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/PlaySound()UntilDoneBlock"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/PointTowards()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ReplaceItem()Of()With()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Set()EffectTo()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Set()To()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SetDragMode()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SetRotationStyle()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ShowList()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ShowVariable()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/StartSound()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Stop()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SwitchBackdropTo()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SwitchCostumeTo()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Touching?Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/When()KeyPressedBlock"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/When()GreaterThan()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/WhenBackdropSwitchesTo()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/WhenIReceive()Block"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/isSquareInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/isSquareInput">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/InputOf"/>
     </owl:ObjectProperty>
     
 
@@ -603,14 +903,6 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/RoundInput"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SquareInput"/>
         </owl:disjointUnionOf>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/LengthOfBlock -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/LengthOfBlock">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/OperatorsReporterBlock"/>
     </owl:Class>
     
 
@@ -1183,6 +1475,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/()And()Block -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()And()Block">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/OperatorsBooleanBlock"/>
+        <rdfs:label xml:lang="en">()And()Block</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/()Contains()?Block -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()Contains()?Block">
@@ -1247,20 +1548,11 @@
     
 
 
-    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/()and()Block -->
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/()Or()Block -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()and()Block">
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()Or()Block">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/OperatorsBooleanBlock"/>
-        <rdfs:label xml:lang="en">()and()Block</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/()or()Block -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()or()Block">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/OperatorsBooleanBlock"/>
-        <rdfs:label xml:lang="en">()or()Block</rdfs:label>
+        <rdfs:label xml:lang="en">()Or()Block</rdfs:label>
     </owl:Class>
     
 
@@ -1536,11 +1828,11 @@
     
 
 
-    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/ItemAt()In()Block -->
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/ItemWithPoistionOf()In()Block -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ItemAt()In()Block">
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ItemWithPoistionOf()In()Block">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ListsReporterBlock"/>
-        <rdfs:label xml:lang="en">ItemAt()In()Block</rdfs:label>
+        <rdfs:label xml:lang="en">ItemWithPoistionOf()In()Block</rdfs:label>
     </owl:Class>
     
 
@@ -1559,6 +1851,14 @@
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Key()Pressed?Block">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/SensingBooleanBlock"/>
         <rdfs:label xml:lang="en">Key()Pressed?Block</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/LengthOf()Block -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/LengthOf()Block">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/OperatorsReporterBlock"/>
     </owl:Class>
     
 
@@ -1599,6 +1899,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/Not()Block -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Not()Block">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/OperatorsBooleanBlock"/>
+        <dc:description xml:lang="en">Logical not operator.</dc:description>
+        <rdfs:label xml:lang="en">Not()Block</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/PickRandom()To()Block -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/PickRandom()To()Block">
@@ -1608,11 +1918,11 @@
     
 
 
-    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/PlaySound()Block -->
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/PlaySound()UntilDoneBlock -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/PlaySound()Block">
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/PlaySound()UntilDoneBlock">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/SoundStackBlock"/>
-        <rdfs:label xml:lang="en">PlaySound()Block</rdfs:label>
+        <rdfs:label xml:lang="en">PlaySound()UntilDoneBlock</rdfs:label>
     </owl:Class>
     
 
@@ -1797,6 +2107,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/SwitchBackdropTo()AndWaitBlock -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SwitchBackdropTo()AndWaitBlock">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/LooksStackBlock"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/SwitchBackdropTo()Block -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SwitchBackdropTo()Block">
@@ -1922,16 +2240,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/not()Block -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/not()Block">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/OperatorsBooleanBlock"/>
-        <dc:description xml:lang="en">Logical not operator.</dc:description>
-        <rdfs:label xml:lang="en">not()Block</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -2016,12 +2324,33 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ClearGraphicEffectsBlock"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/HideBlock"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/NextBackdropBlock"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/NextCostumeBlock"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ShowBlock"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ChangeSizeBy()Block"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Go()()LayersBlock"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/GoTo()LayerBlock"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Say()Block"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Say()For()SecsBlock"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SetSizeTo()PercentageBlock"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SwitchBackdropTo()AndWaitBlock"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SwitchBackdropTo()Block"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SwitchCostumeTo()Block"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Think()Block"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Think()For()Block"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ClearSoundEffectsBlock"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/StopAllSoundsBlock"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/#OWLClass_7f82c9b7_8130_4d24_83af_a54603281039"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Change()EffectBy()Block"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ChangeVolumeBy()Block"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/PlaySound()Block"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/PlaySound()UntilDoneBlock"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Set()EffectTo()Block"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SetVolumeTo()PercentageBlock"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/StartSound()Block"/>
@@ -2097,25 +2426,9 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/LengthOfBlock"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()*()Block"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()+()Block"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()-()Block"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()DividedBy()Block"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()Mod()Block"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Join()()Block"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Letter()Of()Block"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/PickRandom()To()Block"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Round()Block"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/TrigonometricalFunctionOf()Block"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ListBlock"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Item()Of()Block"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ItemAt()In()Block"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ItemWithPoistionOf()In()Block"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/LengthOfList()Block"/>
         </owl:members>
     </rdf:Description>
@@ -2149,13 +2462,29 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()*()Block"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()+()Block"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()-()Block"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()DividedBy()Block"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()Mod()Block"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Join()()Block"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/LengthOf()Block"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Letter()Of()Block"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/PickRandom()To()Block"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Round()Block"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/TrigonometricalFunctionOf()Block"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()=()Block"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()And()Block"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()Contains()?Block"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()GreaterThan()Block"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()LessThan()Block"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()and()Block"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()or()Block"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/not()Block"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/()Or()Block"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Not()Block"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -2195,6 +2524,14 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/CreateCloneOf()Block"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Wait()SecsBlock"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/WaitUntil()Block"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/InputRelation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/NestingRelation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SequenceRelation"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
