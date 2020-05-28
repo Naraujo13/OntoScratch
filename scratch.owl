@@ -2384,6 +2384,95 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/Backdrop1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Backdrop1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Backdrop"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/CatCostume1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/CatCostume1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Costume"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/CatCostume2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/CatCostume2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Costume"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/Forever -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Forever">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ForeverBlock"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/GreenFlag -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/GreenFlag">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/WhenGreenFlagClickedBlock"/>
+        <Predecessor rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Forever"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/Sprite1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Sprite1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Sprite"/>
+        <HasCostume rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/CatCostume1"/>
+        <HasCostume rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/CatCostume2"/>
+        <HasScript rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/GreenFlag"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/Stage1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Stage1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Stage"/>
+        <HasBackdrop rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Backdrop1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/s7a7sound -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/s7a7sound">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/StartSound()Block"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/wai7 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/wai7">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Wait()SecsBlock"/>
+        <Predecessor rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/s7a7sound"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // General axioms
     //
     ///////////////////////////////////////////////////////////////////////////////////////
