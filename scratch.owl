@@ -163,7 +163,7 @@
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ScriptingRelation"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Scripts"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Actor"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/HatShape"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ScratchBlock"/>
         <rdfs:label xml:lang="en">HasScript</rdfs:label>
     </owl:ObjectProperty>
     
@@ -266,7 +266,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Scripts">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ScriptingRelation"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/HatShape"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ScratchBlock"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Actor"/>
         <rdfs:label xml:lang="en">Scripts</rdfs:label>
     </owl:ObjectProperty>
