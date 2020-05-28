@@ -820,6 +820,50 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/FreeInput -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/FreeInput">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Value"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/ListInput -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ListInput">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/RoundDropdownInput"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SquareDropdownInput"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -2504,6 +2548,33 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ScratchProject"/>
         <HasSprite rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Sprite1"/>
         <HasStage rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Stage1"/>
+        <hasInput rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/SoundInput"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/Say -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Say">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Say()Block"/>
+        <hasInput rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/SayInput"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/SayInput -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SayInput">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/VariableValueBlock"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/SoundInput -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SoundInput">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/RoundDropdownInput"/>
+        <ListInput rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Meow</ListInput>
     </owl:NamedIndividual>
     
 
@@ -2528,10 +2599,20 @@
     
 
 
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/WaitSecondsInput -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/WaitSecondsInput">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Value"/>
+        <FreeInput rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</FreeInput>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/s7a7sound -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/s7a7sound">
         <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/StartSound()Block"/>
+        <Predecessor rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Say"/>
     </owl:NamedIndividual>
     
 
@@ -2540,7 +2621,9 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/wai7">
         <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Wait()SecsBlock"/>
+        <ChildOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Forever"/>
         <Predecessor rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/s7a7sound"/>
+        <hasInput rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/WaitSecondsInput"/>
     </owl:NamedIndividual>
     
 
