@@ -1101,7 +1101,9 @@
 
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/Actor -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Actor"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Actor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ScratchObject"/>
+    </owl:Class>
     
 
 
@@ -1327,6 +1329,7 @@
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/Frames -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Frames">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ScratchObject"/>
         <rdfs:label xml:lang="en">Frame</rdfs:label>
     </owl:Class>
     
@@ -1371,6 +1374,7 @@
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/Input -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Input">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ScratchObject"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ScratchProject"/>
     </owl:Class>
     
@@ -1629,14 +1633,23 @@
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/ScratchBlock -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ScratchBlock">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ScratchObject"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ScratchProject"/>
     </owl:Class>
     
 
 
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/ScratchObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ScratchObject"/>
+    
+
+
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/ScratchProject -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ScratchProject"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ScratchProject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ScratchObject"/>
+    </owl:Class>
     
 
 
