@@ -1097,6 +1097,23 @@
     
 
 
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/VariableName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/VariableName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ListBlock"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/VariableBlock"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1827,6 +1844,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/VariableBlock -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/VariableBlock">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/VariableReporterBlock"/>
+        <rdfs:label xml:lang="en">VariableBlock</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/VariableReporterBlock -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/VariableReporterBlock">
@@ -1853,15 +1879,6 @@
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/VariableType">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/DataType"/>
         <rdfs:label xml:lang="en">VariableType</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/VariableValueBlock -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/VariableValueBlock">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/VariableReporterBlock"/>
-        <rdfs:label xml:lang="en">VariableValueBlock</rdfs:label>
     </owl:Class>
     
 
@@ -2739,6 +2756,12 @@
     
 
 
+    <!-- http://www.unibz.it/inf/obdaplugin#RandomClass6677841155 -->
+
+    <owl:Class rdf:about="http://www.unibz.it/inf/obdaplugin#RandomClass6677841155"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -2813,7 +2836,7 @@
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/SayInput -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SayInput">
-        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/VariableValueBlock"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/VariableBlock"/>
     </owl:NamedIndividual>
     
 
