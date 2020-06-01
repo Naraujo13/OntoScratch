@@ -242,6 +242,37 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/DrScratchEvaluation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/DrScratchEvaluation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/CTEvaluation"/>
+        <CTConcepts:evaluates rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/LogicEvaluation"/>
+        <CTConcepts:uses rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/SampleProject"/>
+        <CTConcepts:EvaluatedAt rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2020-06-01T01:20:00Z</CTConcepts:EvaluatedAt>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/LogicEvaluation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/LogicEvaluation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/LogicalThinking"/>
+        <CTConcepts:ConceptScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</CTConcepts:ConceptScore>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // General axioms
     //
     ///////////////////////////////////////////////////////////////////////////////////////
