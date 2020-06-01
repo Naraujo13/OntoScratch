@@ -709,6 +709,7 @@
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ShowVariable()Block"/>
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/StartSound()Block"/>
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Stop()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SwitchBackdropTo()AndWaitBlock"/>
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SwitchBackdropTo()Block"/>
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SwitchCostumeTo()Block"/>
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Touching?Block"/>
@@ -769,6 +770,7 @@
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ShowVariable()Block"/>
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/StartSound()Block"/>
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Stop()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SwitchBackdropTo()AndWaitBlock"/>
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SwitchBackdropTo()Block"/>
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SwitchCostumeTo()Block"/>
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Touching?Block"/>
@@ -1049,6 +1051,7 @@
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ShowVariable()Block"/>
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/StartSound()Block"/>
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Stop()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SwitchBackdropTo()AndWaitBlock"/>
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SwitchBackdropTo()Block"/>
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SwitchCostumeTo()Block"/>
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Touching?Block"/>
@@ -1108,6 +1111,7 @@
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ShowVariable()Block"/>
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/StartSound()Block"/>
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Stop()Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SwitchBackdropTo()AndWaitBlock"/>
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SwitchBackdropTo()Block"/>
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SwitchCostumeTo()Block"/>
                     <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Touching?Block"/>
@@ -2742,6 +2746,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SwitchBackdropTo()AndWaitBlock">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/LooksStackBlock"/>
+        <rdfs:label xml:lang="en">SwitchBackdropTo()AndWaitBlock</rdfs:label>
     </owl:Class>
     
 
