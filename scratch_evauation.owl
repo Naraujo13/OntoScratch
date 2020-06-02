@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts#"
-     xml:base="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts"
+<rdf:RDF xmlns="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/"
+     xml:base="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:ctc="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -8,13 +8,34 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:scratch="http://www.semanticweb.org/nicol/ontologies/scratch/0.1#"
+     xmlns:scratch1="http://www.semanticweb.org/nicol/ontologies/scratch/"
      xmlns:CTConcepts="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/">
     <owl:Ontology rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts">
         <owl:imports rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/0.1"/>
         <rdfs:comment xml:lang="en">Ontology that defines evaluations of Computational Thinking conceps of a Scratch project</rdfs:comment>
         <rdfs:label xml:lang="en">Computational Thinking Evaluation of Scratch Projects Onology</rdfs:label>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
     
 
 
@@ -254,9 +275,9 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/DrScratchEvaluation">
         <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/CTEvaluation"/>
-        <CTConcepts:evaluates rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/LogicEvaluation"/>
-        <CTConcepts:uses rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/SampleProject"/>
-        <CTConcepts:EvaluatedAt rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2020-06-01T01:20:00Z</CTConcepts:EvaluatedAt>
+        <evaluates rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/LogicEvaluation"/>
+        <uses rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/SampleProject"/>
+        <EvaluatedAt rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2020-06-01T01:20:00Z</EvaluatedAt>
     </owl:NamedIndividual>
     
 
@@ -265,7 +286,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/LogicEvaluation">
         <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/LogicalThinking"/>
-        <CTConcepts:ConceptScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</CTConcepts:ConceptScore>
+        <ConceptScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ConceptScore>
     </owl:NamedIndividual>
     
 
@@ -289,6 +310,372 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/Synchronization"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/UserInteractivity"/>
         </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/evaluation">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/abs">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/absScore">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/par">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/parScore">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/log">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/logScore">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/syn">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/syb">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/synScore">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/int">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/intScore">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/rep">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/repScore">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/con">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/conScore">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/totalScore">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Total Score of the evaluation is the sum of each concept score</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DrScratchScore</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/CTEvaluation"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/evaluation"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/Abstraction"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/abs"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/ConceptScore"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/abs"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/absScore"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/Parallelism"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/par"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/ConceptScore"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/par"/>
+                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/parScore"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/LogicalThinking"/>
+                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/log"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/ConceptScore"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/log"/>
+                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/logScore"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/Synchronization"/>
+                                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/syn"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                <rdf:first>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/ConceptScore"/>
+                                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/syb"/>
+                                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/synScore"/>
+                                                                                    </rdf:Description>
+                                                                                </rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                        <rdf:first>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/UserInteractivity"/>
+                                                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/int"/>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:first>
+                                                                                        <rdf:rest>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                <rdf:first>
+                                                                                                    <rdf:Description>
+                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/ConceptScore"/>
+                                                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/int"/>
+                                                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/intScore"/>
+                                                                                                    </rdf:Description>
+                                                                                                </rdf:first>
+                                                                                                <rdf:rest>
+                                                                                                    <rdf:Description>
+                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                        <rdf:first>
+                                                                                                            <rdf:Description>
+                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/DataRepresentation"/>
+                                                                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/rep"/>
+                                                                                                            </rdf:Description>
+                                                                                                        </rdf:first>
+                                                                                                        <rdf:rest>
+                                                                                                            <rdf:Description>
+                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                                <rdf:first>
+                                                                                                                    <rdf:Description>
+                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/ConceptScore"/>
+                                                                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/rep"/>
+                                                                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/repScore"/>
+                                                                                                                    </rdf:Description>
+                                                                                                                </rdf:first>
+                                                                                                                <rdf:rest>
+                                                                                                                    <rdf:Description>
+                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                                        <rdf:first>
+                                                                                                                            <rdf:Description>
+                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                                                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/FlowControl"/>
+                                                                                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/con"/>
+                                                                                                                            </rdf:Description>
+                                                                                                                        </rdf:first>
+                                                                                                                        <rdf:rest>
+                                                                                                                            <rdf:Description>
+                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                                                <rdf:first>
+                                                                                                                                    <rdf:Description>
+                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/ConceptScore"/>
+                                                                                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/con"/>
+                                                                                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/conScore"/>
+                                                                                                                                    </rdf:Description>
+                                                                                                                                </rdf:first>
+                                                                                                                                <rdf:rest>
+                                                                                                                                    <rdf:Description>
+                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                                                        <rdf:first>
+                                                                                                                                            <rdf:Description>
+                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                                                                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#add"/>
+                                                                                                                                                <swrl:arguments rdf:parseType="Collection">
+                                                                                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/totalScore"/>
+                                                                                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/absScore"/>
+                                                                                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/parScore"/>
+                                                                                                                                                </swrl:arguments>
+                                                                                                                                            </rdf:Description>
+                                                                                                                                        </rdf:first>
+                                                                                                                                        <rdf:rest>
+                                                                                                                                            <rdf:Description>
+                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                                                                <rdf:first>
+                                                                                                                                                    <rdf:Description>
+                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                                                                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#add"/>
+                                                                                                                                                        <swrl:arguments rdf:parseType="Collection">
+                                                                                                                                                            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/totalScore"/>
+                                                                                                                                                            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/totalScore"/>
+                                                                                                                                                            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/logScore"/>
+                                                                                                                                                        </swrl:arguments>
+                                                                                                                                                    </rdf:Description>
+                                                                                                                                                </rdf:first>
+                                                                                                                                                <rdf:rest>
+                                                                                                                                                    <rdf:Description>
+                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                                                                        <rdf:first>
+                                                                                                                                                            <rdf:Description>
+                                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                                                                                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#add"/>
+                                                                                                                                                                <swrl:arguments rdf:parseType="Collection">
+                                                                                                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/totalScore"/>
+                                                                                                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/totalScore"/>
+                                                                                                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/synScore"/>
+                                                                                                                                                                </swrl:arguments>
+                                                                                                                                                            </rdf:Description>
+                                                                                                                                                        </rdf:first>
+                                                                                                                                                        <rdf:rest>
+                                                                                                                                                            <rdf:Description>
+                                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                                                                                <rdf:first>
+                                                                                                                                                                    <rdf:Description>
+                                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                                                                                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#add"/>
+                                                                                                                                                                        <swrl:arguments rdf:parseType="Collection">
+                                                                                                                                                                            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/totalScore"/>
+                                                                                                                                                                            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/totalScore"/>
+                                                                                                                                                                            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/intScore"/>
+                                                                                                                                                                        </swrl:arguments>
+                                                                                                                                                                    </rdf:Description>
+                                                                                                                                                                </rdf:first>
+                                                                                                                                                                <rdf:rest>
+                                                                                                                                                                    <rdf:Description>
+                                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                                                                                        <rdf:first>
+                                                                                                                                                                            <rdf:Description>
+                                                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                                                                                                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#add"/>
+                                                                                                                                                                                <swrl:arguments rdf:parseType="Collection">
+                                                                                                                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/totalScore"/>
+                                                                                                                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/totalScore"/>
+                                                                                                                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/repScore"/>
+                                                                                                                                                                                </swrl:arguments>
+                                                                                                                                                                            </rdf:Description>
+                                                                                                                                                                        </rdf:first>
+                                                                                                                                                                        <rdf:rest>
+                                                                                                                                                                            <rdf:Description>
+                                                                                                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                                                                                                <rdf:first>
+                                                                                                                                                                                    <rdf:Description>
+                                                                                                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                                                                                                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#add"/>
+                                                                                                                                                                                        <swrl:arguments rdf:parseType="Collection">
+                                                                                                                                                                                            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/totalScore"/>
+                                                                                                                                                                                            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/totalScore"/>
+                                                                                                                                                                                            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/conScore"/>
+                                                                                                                                                                                        </swrl:arguments>
+                                                                                                                                                                                    </rdf:Description>
+                                                                                                                                                                                </rdf:first>
+                                                                                                                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                                                                                                            </rdf:Description>
+                                                                                                                                                                        </rdf:rest>
+                                                                                                                                                                    </rdf:Description>
+                                                                                                                                                                </rdf:rest>
+                                                                                                                                                            </rdf:Description>
+                                                                                                                                                        </rdf:rest>
+                                                                                                                                                    </rdf:Description>
+                                                                                                                                                </rdf:rest>
+                                                                                                                                            </rdf:Description>
+                                                                                                                                        </rdf:rest>
+                                                                                                                                    </rdf:Description>
+                                                                                                                                </rdf:rest>
+                                                                                                                            </rdf:Description>
+                                                                                                                        </rdf:rest>
+                                                                                                                    </rdf:Description>
+                                                                                                                </rdf:rest>
+                                                                                                            </rdf:Description>
+                                                                                                        </rdf:rest>
+                                                                                                    </rdf:Description>
+                                                                                                </rdf:rest>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:rest>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/TotalScore"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/evaluation"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/totalScore"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
     </rdf:Description>
 </rdf:RDF>
 
