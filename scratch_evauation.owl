@@ -271,46 +271,13 @@
     
 
 
-    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/AbstractionEvaluation -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/AbstractionEvaluation">
-        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/Abstraction"/>
-        <ConceptScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ConceptScore>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/DataRepresentationEvaluation -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/DataRepresentationEvaluation">
-        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/DataRepresentation"/>
-        <ConceptScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ConceptScore>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/DrScratchEvaluation -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/DrScratchEvaluation">
         <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/CTEvaluation"/>
-        <evaluates rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/AbstractionEvaluation"/>
-        <evaluates rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/DataRepresentationEvaluation"/>
-        <evaluates rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/FlowControlEvaluation"/>
         <evaluates rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/LogicEvaluation"/>
-        <evaluates rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/ParallelismEvaluation"/>
-        <evaluates rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/SynchronizationEvaluation"/>
-        <evaluates rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/UserInteractivityEvaluation"/>
         <uses rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/SampleProject"/>
         <EvaluatedAt rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2020-06-01T01:20:00Z</EvaluatedAt>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/FlowControlEvaluation -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/FlowControlEvaluation">
-        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/FlowControl"/>
-        <ConceptScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ConceptScore>
     </owl:NamedIndividual>
     
 
@@ -320,33 +287,6 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/LogicEvaluation">
         <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/LogicalThinking"/>
         <ConceptScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ConceptScore>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/ParallelismEvaluation -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/ParallelismEvaluation">
-        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/Parallelism"/>
-        <ConceptScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ConceptScore>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/SynchronizationEvaluation -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/SynchronizationEvaluation">
-        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/Synchronization"/>
-        <ConceptScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ConceptScore>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/UserInteractivityEvaluation -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/UserInteractivityEvaluation">
-        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/UserInteractivity"/>
-        <ConceptScore rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ConceptScore>
     </owl:NamedIndividual>
     
 
