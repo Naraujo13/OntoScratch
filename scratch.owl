@@ -47,11 +47,9 @@
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/ActsInProject -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ActsInProject">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/isOwnedBy"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/HasActor"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Actor"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Project"/>
     </owl:ObjectProperty>
@@ -64,8 +62,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/FrameIsFrom"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/HasBackdrop"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Backdrop"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Stage"/>
     </owl:ObjectProperty>
@@ -137,8 +133,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/FrameIsFrom"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/HasCostume"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Costume"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Sprite"/>
         <rdfs:label xml:lang="en">CostumeIsUsedBy</rdfs:label>
@@ -149,10 +143,9 @@
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/FrameIsFrom -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/FrameIsFrom">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/isOwnedBy"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/HasFrame"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Frames"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Actor"/>
     </owl:ObjectProperty>
@@ -162,10 +155,8 @@
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/HasActor -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/HasActor">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/owns"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Project"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Actor"/>
     </owl:ObjectProperty>
@@ -177,8 +168,6 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/HasBackdrop">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/HasFrame"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Stage"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Backdrop"/>
     </owl:ObjectProperty>
@@ -190,8 +179,6 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/HasCostume">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/HasFrame"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Sprite"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Costume"/>
     </owl:ObjectProperty>
@@ -201,10 +188,8 @@
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/HasFrame -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/HasFrame">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/owns"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Actor"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Frames"/>
     </owl:ObjectProperty>
@@ -214,11 +199,9 @@
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/HasScript -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/HasScript">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/owns"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Scripts"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Actor"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Block"/>
         <rdfs:label xml:lang="en">HasScript</rdfs:label>
@@ -232,8 +215,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/HasActor"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/SpriteActsInProject"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Project"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Sprite"/>
     </owl:ObjectProperty>
@@ -246,8 +227,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/HasActor"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/StageActsInProject"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Project"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Stage"/>
     </owl:ObjectProperty>
@@ -257,11 +236,9 @@
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/InputOf -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/InputOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/isOwnedBy"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/hasInput"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Input"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Block"/>
     </owl:ObjectProperty>
@@ -359,10 +336,8 @@
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/Scripts -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Scripts">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/isOwnedBy"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Block"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Actor"/>
         <rdfs:label xml:lang="en">Scripts</rdfs:label>
@@ -375,8 +350,6 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SpriteActsInProject">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ActsInProject"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Sprite"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Project"/>
     </owl:ObjectProperty>
@@ -388,8 +361,6 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/StageActsInProject">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/ActsInProject"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Stage"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Project"/>
     </owl:ObjectProperty>
@@ -467,8 +438,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/hasInput"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/isHexInput"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -491,10 +460,8 @@
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/hasInput -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/hasInput">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/owns"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Block"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Input"/>
     </owl:ObjectProperty>
@@ -507,8 +474,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/hasRoundInput"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/isRoundDropdownInput"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -527,8 +492,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/hasInput"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/isRoundInput"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -595,8 +558,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/hasRoundInput"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/isRoundValueInput"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -670,8 +631,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/hasSquareInput"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/isSquareDropdownInput"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -731,8 +690,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/hasInput"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/isSquareInput"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -825,8 +782,6 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/isHexInput">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/InputOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/HexInput"/>
         <rdfs:range>
             <owl:Class>
@@ -846,13 +801,40 @@
     
 
 
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/isOwnedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/isOwnedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/owns"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Actor"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Frames"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Input"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Actor"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Project"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/isRoundDropdownInput -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/isRoundDropdownInput">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/isRoundInput"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -870,8 +852,6 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/isRoundInput">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/InputOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/RoundInput"/>
         <rdfs:range>
             <owl:Class>
@@ -937,8 +917,6 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/isRoundValueInput">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/isRoundInput"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1011,8 +989,6 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/isSquareDropdownInput">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/isSquareInput"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/SquareDropdownInput"/>
         <rdfs:range>
             <owl:Class>
@@ -1071,8 +1047,6 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/isSquareInput">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/InputOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/SquareInput"/>
         <rdfs:range>
             <owl:Class>
@@ -1122,6 +1096,38 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/owns -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/owns">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Actor"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Project"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Actor"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Block"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Frames"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Input"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/owns"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Connects"/>
+        </owl:propertyChainAxiom>
     </owl:ObjectProperty>
     
 
