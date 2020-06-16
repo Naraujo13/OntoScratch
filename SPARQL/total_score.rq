@@ -5,56 +5,10 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-SELECT ?evaluation ?abstraction_score ?data_rep_score ?f_control_score ?logic_score ?parallelism_score ?synchronization_score ?u_interactivity_score (?abstraction_score + ?data_rep_score + ?f_control_score + ?logic_score + ?parallelism_score + ?synchronization_score + ?u_interactivity_score AS ?total_score)
+SELECT  ?evaluation (SUM(?score) AS ?total_score)
 WHERE {
-	?evaluation rdf:type ctc:CTEvaluation .
-
-	# Abstraction
-	OPTIONAL {
-		?abstraction rdf:type ctc:Abstraction.
-		?evaluation ctc:evaluates ?abstraction .
-		?abstraction ctc:ConceptScore ?abstraction_score
-	}.
-
-	# Data Representation
-	OPTIONAL {
-		?data_representation rdf:type ctc:DataRepresentation .
-		?evaluation ctc:evaluates ?data_representation .
-		?data_representation ctc:ConceptScore ?data_rep_score
-	} .
-
-	# Flow Control
-	OPTIONAL {
-		?flow_control rdf:type ctc:FlowControl .
-		?evaluation ctc:evaluates ?flow_control .
-		?flow_control ctc:ConceptScore ?f_control_score
-	} .
-
-	# Logical Thinking
-	OPTIONAL {
-		?logical_thinking rdf:type ctc:LogicalThinking .
-		?evaluation ctc:evaluates ?logical_thinking .
-		?logical_thinking ctc:ConceptScore ?logic_score
-	} .
-
-	# Parallelism
-	OPTIONAL {
-		?parallelism rdf:type ctc:Parallelism .
-		?evaluation ctc:evaluates ?parallelism.
-		?parallelism ctc:ConceptScore ?parallelism_score
-	} .
-
-	# Syncrhonization
-	OPTIONAL {
-		?synchronization rdf:type ctc:Synchronization .
-		?evaluation ctc:evaluates ?synchronization.
-		?synchronization ctc:ConceptScore ?synchronization_score
-	} .
-
-	# User Interactivity
-	OPTIONAL {
-		?u_interactivity rdf:type ctc:UserInteractivity.
-		?evaluation ctc:evaluates ?u_interactivity.
-		?u_interactivity ctc:ConceptScore ?u_interactivity_score
-	} .
+	?concept rdf:type ctc:CTConcept .
+	?concept ctc:ConceptScore ?score .
+	?evaluation ctc:evaluates ?concept
 }
+GROUP BY ?evaluation
