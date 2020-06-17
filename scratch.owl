@@ -2938,6 +2938,34 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/IfBlock">
         <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/If()ThenBlock"/>
+        <hasInput rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/IfInput"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/IfInput -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/IfInput">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Key()Pressed?Block"/>
+        <hasInput rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/NotBlock"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/KeyPressedInput -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/KeyPressedInput">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/SquareDropdownInput"/>
+        <ListInput rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Space</ListInput>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/NotBlock -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/NotBlock">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Not()Block"/>
+        <hasInput rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/KeyPressedInput"/>
     </owl:NamedIndividual>
     
 
