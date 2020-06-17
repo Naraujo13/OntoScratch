@@ -2934,6 +2934,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/IfBlock -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/IfBlock">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/If()ThenBlock"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/SampleProject -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/SampleProject">
@@ -2948,6 +2956,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Say">
         <rdf:type rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/Say()Block"/>
+        <Predecessor rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/IfBlock"/>
         <hasInput rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/SayInput"/>
     </owl:NamedIndividual>
     
