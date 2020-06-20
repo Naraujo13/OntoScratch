@@ -1,0 +1,63 @@
+PREFIX ctc: <http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/>
+PREFIX scratch: <http://www.semanticweb.org/nicol/ontologies/scratch/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+# SELECT ?evaluation ?project ?synchronization
+# ?level_1_block ?has_level_1
+# ?level_2_block ?has_level_2
+# ?level_3_block ?has_level_3
+# ?score
+CONSTRUCT {
+	?synchronization ctc:ConceptScore ?score
+}
+WHERE {
+	?evaluation rdf:type ctc:CTEvaluation .
+	?evaluation ctc:evaluates ?synchronization .
+	?synchronization rdf:type ctc:Synchronization .
+
+	?evaluation ctc:uses ?project .
+	?project rdf:type scratch:Project .
+
+	# Rule 1
+  OPTIONAL{
+    ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Wait()SecsBlock>
+  }
+
+	# Rule 2
+	OPTIONAL{
+    ?project scratch:owns ?level_2_block .
+    { ?level_2_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Broadcast()Block> } UNION
+    { ?level_2_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/WhenIReceive()Block> } UNION
+    # Add inputs at Stop()Block
+    { ?level_2_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Stop()Block> }
+  }
+	# Rule 3
+	OPTIONAL{
+    ?project scratch:owns ?level_3_block .
+    { ?level_3_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/WaitUntil()Block> } UNION
+    { ?level_3_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/WhenBackdropSwitchesTo()Block> } UNION
+    { ?level_3_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Broadcast()AndWaitBlock> }
+  }
+
+	BIND(BOUND(?level_1_block) AS ?has_level_1)
+	BIND(BOUND(?level_2_block) AS ?has_level_2)
+	BIND(BOUND(?level_3_block) AS ?has_level_3)
+
+	BIND(
+		if(
+			?has_level_3,
+			3,
+			if(
+				?has_level_2,
+				2,
+				if(
+					?has_level_1,
+					1,
+					0
+				)
+			)
+		)
+	AS ?score)
+}
