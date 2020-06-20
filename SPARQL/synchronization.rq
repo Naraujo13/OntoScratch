@@ -22,6 +22,7 @@ WHERE {
 
 	# Rule 1
   OPTIONAL{
+    ?project scratch:owns ?level_1_block .
     ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Wait()SecsBlock>
   }
 

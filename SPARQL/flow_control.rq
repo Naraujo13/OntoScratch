@@ -4,12 +4,13 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-# SELECT ?evaluation ?project ?flow_control
-# ?has_sequence ?has_repeat ?has_repeat_until
-# ?flow_control_score
-# ?object ?has_if ?has_else ?has_logical_op ?logic_score
+# SELECT ?evaluation ?project ?synchronization
+# ?level_1_block ?has_level_1
+# ?level_2_block ?has_level_2
+# ?level_3_block ?has_level_3
+# ?score
 CONSTRUCT {
-	?flow_control ctc:ConceptScore ?flow_control_score
+	?flow_control ctc:ConceptScore ?score
 }
 WHERE {
 	?evaluation rdf:type ctc:CTEvaluation .
@@ -20,34 +21,40 @@ WHERE {
 	?project rdf:type scratch:Project .
 
 	# Rule 1
-	OPTIONAL{ ?block1 scratch:Connects ?block2 . }
+	OPTIONAL{
+    ?project scratch:owns ?block .
+    ?project scratch:owns ?level_1_block .
+    ?block scratch:Connects ?level_1_block
+  }
 	# Rule 2
 	OPTIONAL{
-    { ?repeat rdf:type scratch:ForeverBlock } UNION
-    { ?repeat rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Repeat()Block> }
+    ?project scratch:owns ?level_2_block .
+    { ?level_2_block rdf:type scratch:ForeverBlock } UNION
+    { ?level_2_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Repeat()Block> }
   }
 	# Rule 3
 	OPTIONAL{
-    ?repeat_until rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/RepeatUntil()Block>
+    ?project scratch:owns ?level_3_block .
+    ?level_3_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/RepeatUntil()Block>
   }
 
-	BIND(BOUND(?block2) AS ?has_sequence)
-	BIND(BOUND(?repeat) AS ?has_repeat)
-	BIND(BOUND(?repeat_until) AS ?has_repeat_until)
+	BIND(BOUND(?level_1_block) AS ?has_level_1)
+	BIND(BOUND(?level_2_block) AS ?has_level_2)
+	BIND(BOUND(?level_3_block) AS ?has_level_3)
 
 	BIND(
 		if(
-			?has_repeat_until,
+			?has_level_3,
 			3,
 			if(
-				?has_repeat,
+				?has_level_2,
 				2,
 				if(
-					?has_sequence,
+					?has_level_1,
 					1,
 					0
 				)
 			)
 		)
-	AS ?flow_control_score)
+	AS ?score)
 }

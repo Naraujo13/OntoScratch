@@ -4,9 +4,13 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-# SELECT ?evaluation ?project ?object ?has_if ?has_else ?has_logical_op ?logic_score
+# SELECT ?evaluation ?project ?synchronization
+# ?level_1_block ?has_level_1
+# ?level_2_block ?has_level_2
+# ?level_3_block ?has_level_3
+# ?score
 CONSTRUCT {
-	?logical_thinking ctc:ConceptScore ?logic_score
+	?logical_thinking ctc:ConceptScore ?score
 }
 WHERE {
 	?evaluation rdf:type ctc:CTEvaluation .
@@ -17,33 +21,40 @@ WHERE {
 	?project rdf:type scratch:Project .
 
 	# Rule 1
-	OPTIONAL{ ?if_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/If()ThenBlock> }
+	OPTIONAL{
+    ?project scratch:owns ?level_1_block .
+		?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/If()ThenBlock>
+	}
 	# Rule 2
-	OPTIONAL{ ?if_else_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/If()ThenElseBlock> }
+	OPTIONAL{
+    ?project scratch:owns ?level_2_block .
+		?level_2_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/If()ThenElseBlock>
+	}
 	# Rule 3
 	OPTIONAL {
-		{ ?logical_operator_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/()And()Block> } UNION
-		{ ?logical_operator_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/()Or()Block> } UNION
-		{ ?logical_operator_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Not()Block> }
+    ?project scratch:owns ?level_3_block .
+		{ ?level_3_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/()And()Block> } UNION
+		{ ?level_3_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/()Or()Block> } UNION
+		{ ?level_3_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Not()Block> }
 	}
 
-	BIND(BOUND(?if_block) AS ?has_if)
-	BIND(BOUND(?if_else) AS ?has_else)
-	BIND(BOUND(?logical_operator_block) AS ?has_logical_op)
+	BIND(BOUND(?level_1_block) AS ?has_level_1)
+	BIND(BOUND(?level_2_block) AS ?has_level_2)
+	BIND(BOUND(?level_3_block) AS ?has_level_3)
 
 	BIND(
 		if(
-			?has_logical_op,
+			?has_level_3,
 			3,
 			if(
-				?has_if_else,
+				?has_level_2,
 				2,
 				if(
-					?has_if,
+					?has_level_1,
 					1,
 					0
 				)
 			)
 		)
-	AS ?logic_score)
+	AS ?score)
 }
