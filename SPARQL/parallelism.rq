@@ -1,0 +1,109 @@
+PREFIX ctc: <http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/>
+PREFIX scratch: <http://www.semanticweb.org/nicol/ontologies/scratch/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+CONSTRUCT {
+	?parallelism ctc:ConceptScore ?score
+}
+WHERE {
+  SELECT ?evaluation ?project ?parallelism (MAX(?score) AS ?score)
+  WHERE {
+    ?evaluation rdf:type ctc:CTEvaluation .
+    ?evaluation ctc:evaluates ?parallelism .
+    ?parallelism rdf:type ctc:Parallelism .
+
+    ?evaluation ctc:uses ?project .
+    ?project rdf:type scratch:Project .
+
+    # Rule 1
+    OPTIONAL{
+      ?project scratch:owns ?green_flag_1, ?green_flag_2 .
+      ?green_flag_1 rdf:type scratch:WhenGreenFlagClickedBlock .
+      ?green_flag_2 rdf:type scratch:WhenGreenFlagClickedBlock
+    }
+
+    # Rule 2
+    OPTIONAL{
+      ?project scratch:owns ?level_2_block_1, ?level_2_block_2 .
+      {
+        ?level_2_block_1 rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/When()KeyPressedBlock> .
+        ?level_2_block_2 rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/When()KeyPressedBlock>
+      } UNION
+      {
+        ?level_2_block_1 rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/WhenThisSpriteClickedBlock> .
+        ?level_2_block_2 rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/WhenThisSpriteClickedBlock>
+      } UNION
+      {
+        ?level_2_block_1 rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/WhenThisSpriteClickedBlock> .
+        ?level_2_block_2 rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/WhenThisSpriteClickedBlock> .
+        ?level_2_project scratch:owns ?sprite .
+        ?sprite rdf:type scratch:Sprite .
+        ?sprite scratch:owns ?level_2_block_1 .
+        ?sprite scratch:owns ?level_2_block_2
+      }
+    }
+    # Rule 3
+    OPTIONAL{
+    ?project scratch:owns ?level_3_block_1 .
+      {
+        ?project scratch:owns ?level_3_block_2 .
+        ?level_3_block_1 rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/WhenIReceive()Block> .
+        ?level_3_block_2 rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/WhenIReceive()Block>
+      } UNION
+      {
+        ?level_3_block_1 rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/CreateCloneOf()Block>
+      } UNION
+      {
+        ?project scratch:owns ?level_3_block_2 .
+        ?level_3_block_1 rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/When()GreaterThan()Block> .
+        ?level_3_block_2 rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/When()GreaterThan()Block>
+      } UNION
+      {
+        ?project scratch:owns ?level_3_block_2 .
+        ?level_3_block_1 rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/WhenBackdropSwitchesTo()Block> .
+        ?level_3_block_2 rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/WhenBackdropSwitchesTo()Block>
+      }
+    }
+
+    BIND(
+      if(
+        BOUND(?green_flag_1) && BOUND(?greenflag_2),
+        !sameterm(?green_flag_1, ?greenflag_2),
+        FALSE
+      ) AS ?has_level_1
+    )
+    BIND(
+        if(
+          BOUND(?level_2_block_1) && BOUND(?level_2_block_2),
+          !sameterm(?level_2_block_1, ?level_2_block_2),
+          FALSE
+        ) AS ?has_level_2
+    )
+    BIND(
+        if(
+          BOUND(?level_3_block_1) && BOUND(?level_3_block_2),
+          !sameterm(?level_3_block_1, ?level_3_block_2),
+          FALSE
+        ) AS ?has_level_3
+    )
+
+    BIND(
+      if(
+        ?has_level_3,
+        3,
+        if(
+          ?has_level_2,
+          2,
+          if(
+            ?has_level_1,
+            1,
+            0
+          )
+        )
+      )
+    AS ?score)
+  }
+  GROUP BY ?evaluation ?project ?paralleslism
+}
