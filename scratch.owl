@@ -2397,6 +2397,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/nicol/ontologies/scratch/GoTo()Block -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/GoTo()Block">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nicol/ontologies/scratch/MotionStackBlock"/>
+        <rdfs:label xml:lang="en">GoTo()Block</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/nicol/ontologies/scratch/GoTo()LayerBlock -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/GoTo()LayerBlock">
@@ -3247,6 +3256,7 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/ChangeYBy()Block"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Glide()SecsTo()Block"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Glide()SecsToX()Y()Block"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/GoTo()Block"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/GoToX()Y()Block"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/Move()StepsBlock"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/nicol/ontologies/scratch/PointInDirection()Block"/>
