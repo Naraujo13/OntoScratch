@@ -1,0 +1,117 @@
+PREFIX ctc: <http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/>
+PREFIX scratch: <http://www.semanticweb.org/nicol/ontologies/scratch/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+CONSTRUCT { ?data_representation ctc:ConceptScore ?score }
+WHERE {
+  ?evaluation rdf:type ctc:CTEvaluation .
+  ?evaluation ctc:evaluates ?data_representation .
+  ?data_representation rdf:type ctc:DataRepresentation .
+
+  ?evaluation ctc:uses ?project .
+  ?project rdf:type scratch:Project .
+
+  # Rule 1
+  OPTIONAL{
+    ?project scratch:owns ?level_1_block .
+    {
+      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Move()StepsBlock>
+    } UNION
+    {
+      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Turn()DegreesBlock>
+    } UNION
+    {
+      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/GoTo()Block>
+    } UNION
+    {
+      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/GoToX()Y()Block>
+    } UNION
+    {
+      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Glide()SecsTo()Block>
+    } UNION
+    {
+      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Glide()SecsToX()Y()Block>
+    } UNION
+    {
+      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/PointInDirection()Block>
+    } UNION
+    {
+      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/PointTowards()Block>
+    } UNION
+    {
+      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/ChangeXBy()Block>
+    } UNION
+    {
+      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/SetXTo()Block>
+    } UNION
+    {
+      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/ChangeYBy()Block>
+    } UNION
+    {
+      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/SetYTo()Block>
+    } UNION
+    {
+      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/SwitchCostumeTo()Block>
+    } UNION
+    {
+      ?level_1_block rdf:type scratch:NextCostumeBlock
+    } UNION
+    {
+      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/SwitchBackdropToBlock>
+    } UNION
+    {
+      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/NextBackdrop>
+    } UNION
+    {
+      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/ChangeSizeBy()Block>
+    } UNION
+    {
+      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/SetSizeTo()PercentageBlock>
+    } UNION
+    {
+      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Change()EffectBy()>
+    } UNION
+    {
+      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Set()EffectTo()Block>
+    } UNION
+    {
+      ?level_1_block rdf:type scratch:ClearGraphicEffectsBlock
+    } UNION
+    {
+      ?level_1_block rdf:type scratch:ShowBlock
+    } UNION
+    {
+      ?level_1_block rdf:type scratch:HideBlock
+    }
+  }
+
+  # Rule 2
+  OPTIONAL{
+    ?project scratch:owns ?level_2_block .
+    {
+      ?level_2_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Change()By()Block>
+    } UNION
+    {
+      ?level_2_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Set()To()Block>
+    }
+  }
+  # Rule 3
+  OPTIONAL{
+    ?project scratch:owns ?level_3_block .
+    ?level_3_block rdf:type scratch:ListsType
+  }
+
+BIND(BOUND(?level_1_block) AS ?has_level_1)
+BIND(BOUND(?level_2_block) AS ?has_level_2)
+BIND(BOUND(?level_3_block) AS ?has_level_3)
+
+BIND(
+  if(?has_level_3,
+    3,
+    if(?has_level_2,
+      2,
+      if(?has_level_1,
+        1,
+        0
+))) AS ?score)
+}
