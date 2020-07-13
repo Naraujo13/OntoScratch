@@ -1,0 +1,41 @@
+PREFIX ctc: <http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/>
+PREFIX scratch: <http://www.semanticweb.org/nicol/ontologies/scratch/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+CONSTRUCT {
+	?evaluated_concept ctc:ConceptScore ?score
+}
+WHERE {
+	?evaluation rdf:type ctc:CTEvaluation .
+	?evaluation ctc:evaluates ?evaluated_concept .
+	?evaluated_concept rdf:type ctc:EvaluatedConcept .
+
+	?evaluation ctc:uses ?project .
+	?project rdf:type scratch:Project .
+
+	# Rule 1
+	OPTIONAL{
+    # Padrão de código para pontuação de nível 1 para o conceito
+	}
+	# Rule 2
+	OPTIONAL{
+    # Padrão de código para pontuação de nível 2 para o conceito
+	}
+	# Rule 3
+	OPTIONAL {
+    # Padrão de código para pontuação de nível 3 para o conceito
+	}
+
+	BIND(BOUND(?level_1_block) AS ?has_level_1)
+	BIND(BOUND(?level_2_block) AS ?has_level_2)
+	BIND(BOUND(?level_3_block) AS ?has_level_3)
+
+	BIND(
+		if(?has_level_3,
+			3,
+			if(?has_level_2,
+				2,
+				if(?has_level_1,
+					1,
+					0
+	))) AS ?score)
+}
