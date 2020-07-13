@@ -57,10 +57,10 @@ WHERE {
       ?level_1_block rdf:type scratch:NextCostumeBlock
     } UNION
     {
-      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/SwitchBackdropToBlock>
+      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/SwitchBackdropTo()Block>
     } UNION
     {
-      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/NextBackdrop>
+      ?level_1_block rdf:type scratch:NextBackdropBlock
     } UNION
     {
       ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/ChangeSizeBy()Block>
@@ -69,7 +69,7 @@ WHERE {
       ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/SetSizeTo()PercentageBlock>
     } UNION
     {
-      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Change()EffectBy()>
+      ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Change()EffectBy()Block>
     } UNION
     {
       ?level_1_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Set()EffectTo()Block>
