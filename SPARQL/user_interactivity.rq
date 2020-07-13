@@ -1,0 +1,114 @@
+PREFIX ctc: <http://www.semanticweb.org/nicol/ontologies/2020/4/CTConcepts/>
+PREFIX scratch: <http://www.semanticweb.org/nicol/ontologies/scratch/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+CONSTRUCT { ?user_interactivity ctc:ConceptScore ?score }
+WHERE {
+  ?evaluation rdf:type ctc:CTEvaluation .
+  ?evaluation ctc:evaluates ?user_interactivity .
+  ?user_interactivity rdf:type ctc:UserInteractivity .
+
+  ?evaluation ctc:uses ?project .
+  ?project rdf:type scratch:Project .
+
+  # Rule 1
+  OPTIONAL{
+    ?project scratch:owns ?level_1_block .
+    ?level_1_block rdf:type scratch:WhenGreenFlagClickedBlock
+  }
+
+  # Rule 2
+  OPTIONAL{
+    ?project scratch:owns ?level_2_block .
+    {
+      ?level_2_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/When()KeyPressedBlock>
+    } UNION
+    {
+      ?level_2_block rdf:type scratch:WhenThisSpriteClickedBlock
+    } UNION
+    {
+      ?level_2_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Ask()AndWaitBlock>
+    } UNION
+    {
+      ?level_2_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/PointTowards()Block> .
+      ?level_2_block scratch:hasInput ?input .
+      ?input rdf:type scratch:Value .
+      ?input scratch:FreeInput "mouse-pointer"
+    } UNION
+    {
+      ?level_2_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Glide()SecsTo()Block> .
+      ?level_2_block scratch:hasInput ?input .
+      ?input rdf:type scratch:Value .
+      ?input scratch:FreeInput "mouse-pointer"
+    } UNION
+    {
+      ?level_2_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Touching?Block> .
+      ?level_2_block scratch:hasInput ?input .
+      ?input rdf:type scratch:Value .
+      ?input scratch:FreeInput "mouse-pointer"
+    } UNION
+    {
+      ?level_2_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/DistanceTo()Block> .
+      ?level_2_block scratch:hasInput ?input .
+      ?input rdf:type scratch:Value .
+      ?input scratch:FreeInput "mouse-pointer"
+    } UNION
+    {
+      ?level_2_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/MouseDown?Block>
+    } UNION
+    {
+      ?level_2_block rdf:type scratch:MouseXBlock
+    } UNION
+    {
+      ?level_2_block rdf:type scratch:MouseYBlock
+    }
+  }
+  # Rule 3
+  OPTIONAL{
+  ?project scratch:owns ?level_3_block .
+    {
+      ?level_3_block rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/When()GreaterThan()Block>
+    } UNION
+    {
+      ?level_3_block_1 rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/PlaySound()UntilDoneBlock>
+    } UNION
+    {
+      ?level_3_block_1 rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/StartSound()Block>
+    } UNION
+    {
+      ?level_3_block_1 rdf:type scratch:StopAllSoundsBlock
+    } UNION
+    {
+      ?level_3_block_1 rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Change()EffectBy()Block>
+    } UNION
+    {
+      ?level_3_block_1 rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/Set()EffectTo()Block>
+    } UNION
+    {
+      ?level_3_block_1 rdf:type scratch:ClearSoundEffectsBlock
+    } UNION
+    {
+      ?level_3_block_1 rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/ChangeVolumeBy()Block>
+    } UNION
+    {
+      ?level_3_block_1 rdf:type <http://www.semanticweb.org/nicol/ontologies/scratch/SetVolumeTo()PercentageBlock>
+    } UNION
+    {
+      ?level_3_block_1 rdf:type scratch:VolumeBlock
+    }
+  }
+
+BIND(BOUND(?level_1_block) AS ?has_level_1)
+BIND(BOUND(?level_2_block) AS ?has_level_2)
+BIND(BOUND(?level_3_block) AS ?has_level_3)
+
+BIND(
+  if(?has_level_3,
+    3,
+    if(?has_level_2,
+      2,
+      if(?has_level_1,
+        1,
+        0
+))) AS ?score)
+}
